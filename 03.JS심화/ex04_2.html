@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        
+    </div>
+    <button id="btn">요청</button>
+    <script>
+        // 1. getData 라는 함수 선언 
+        const getData = () => {
+            console.log('get Data')
+
+            // 정렬 : 범위 지정 + Ctrl + K + F  
+
+            // 3. getData 함수 구성 
+            //  3-1) 영화진흥위원회 api 데이터를 가져올 것 (원하는 날짜 데이터)
+
+            let url = 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=ba882060c66c597d47f1c86cc36c9807&targetDt=20221201'
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                let list = data.boxOfficeResult.weeklyBoxOfficeList
+
+                // 순위 : rank , 영화명 : movieNm , 개봉일자 : openDt 
+
+                let code = ''
+
+                code += '<table border="1">'
+
+                for(let i = 0 ; i<list.length ; i++){
+                    // console.log(list[i].rank)
+                    // console.log(list[i].movieNm)
+                    // console.log(list[i].openDt)           
+                    
+                    code += '<tr><td>'+list[i].rank+'</td>'
+                    code += '<td>'+list[i].movieNm+'</td>'
+                    code += '<td>'+list[i].openDt+'</td></tr>'
+                }
+
+                code += '</table>'
+                
+                // HTML 문서를 JS 문법으로 가져와서 쓰고싶다면? 
+                document.getElementById('container').innerHTML = code
+            })
+
+            //  3-2) 내가 가져온 데이터로 테이블 구성 id가 container인 div안에 넣을 것 
+            //          (innerHTML 사용해야함 )
+
+            // 힌트★ 
+            // 1) 표는 반복되지 않고, 줄은 반복 
+            // <table> -> <tr> -> <td> 
+            // 2) 누적이 안되면 변수안에 누적을 하면 된다 
+        }
+
+        // 2. id가 btn인 버튼을 눌렀을 때, getData라는 함수 호출 
+        document.getElementById('btn').addEventListener('click', getData)
+
+    </script>
+</body>
+</html>

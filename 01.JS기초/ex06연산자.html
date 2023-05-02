@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 연산자 
+
+        // (1) 산술 연산자 중 나누기 연산자
+        //      / = 나누기 연산자로, 나눈 실제 값이 나오게 됨
+        //      % = 나머지 연산자
+        console.log(100/3)
+        console.log(100%3)
+
+        // (2) 비교 연산자 & 일치 연산자
+        // == vs ===
+
+        console.log(3=='3') // true
+        console.log(3==='3') // false
+        // == 데이터 타입을 검증하지 않고 값만 비교
+        //      => 숫자를 문자로 강제 형변환해서 비교
+
+        // === 데이터 타입과 값을 둘 다 비교(일치 연산자)
+        //      => 권장사항
+
+        // (3) 삼항연산자
+        // 리액트에서 중요함
+        // 조건 ? 실행문1 : 실행문2
+        
+        let dinner = false
+
+        // case1) 실행문 바로 실행
+        dinner === true ? console.log('카페가실?') :console.log('밥드실?')
+        
+        // case2) 변수에 대입
+        let question = dinner === true ? '카페갈래' : '밥먹을래'
+        console.log(question)
+
+        // (4) 논리연산자
+        // && (and) vs || (or)
+
+        // && -> 모두 참일 때 true를 반환, 하나라도 거짓이면 false반환
+        // || -> 하나라도 참일 때 true
+
+        console.log(3=='3' && 3==3) // 둘 다 참일 경우 true
+        console.log(3=='3' && 3==='3') // 하나라도 거짓이라면 false
+        console.log(3=='3' || 3==='3') // 하나라도 참이면 true
+    </script>
+</body>
+</html>

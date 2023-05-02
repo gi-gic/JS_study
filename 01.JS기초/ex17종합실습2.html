@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 지금부터 가위바위보를 시작하겠습니다! 
+        // 가위바위보 프로세스는 간단합니다 
+
+        // Step 1. arr이라는 배열에 '가위', '바위', '보' 라는 데이터를 넣습니다 
+        let arr = ['가위', '바위', '보']
+        
+        // Step 2. 사용자와 컴퓨터의 선택을 입력받습니다. 
+        //      2-1) 사용자의 선택 (prompt 활용) -> myChoice 
+        //            '무엇을 내시겠습니까? (가위, 바위, 보)'
+        let my_Choice = prompt('무엇을 내시겠습니까? (가위, 바위, 보)')
+        
+        //      2-2) 컴퓨터의 선택 (랜덤한 수 활용) -> 배열안에 값을 추출 
+        //              ranNum, comChoice 
+        let ranNum = parseInt(Math.random()*3)
+        let com_Choice =  arr[ranNum]
+        
+        //      2-3) console창에 나의 선택과 컴퓨터의 선택을 입력한다 
+        console.log('사용자의 선택 : ',my_Choice)
+        console.log('컴퓨터의 선택 : ',com_Choice)
+
+        // Step 3. 가위바위보의 결과를 출력합니다. 
+        //      console창에 결과는 사용자 입장에서 승리, 패배, 무승부 SS
+
+        let result = ''
+        if(my_Choice==com_Choice){
+            result = '무승부'
+            alert('결과는 무승부!')
+        }if(my_Choice==='가위'){
+            result = com_Choice === '바위' ? '패배':'승리'
+        }else if(my_Choice==='바위'){
+            result = com_Choice === '보' ? '패배':'승리'
+        }else if(my_Choice==='보'){
+            result = com_Choice === '가위' ? '패배':'승리'
+        }
+
+        console.log('결과는',result,'!')
+        
+        
+        
+    </script>
+</body>
+</html>

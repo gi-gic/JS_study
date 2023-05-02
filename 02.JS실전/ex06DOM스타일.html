@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="txt">DOM 조작을 통한 CSS 수정</h1>
+    <button id="btn">스타일 변경</button>
+    <script>
+        // 미션! 버튼 클릭 시 h1 태그의 컨텐츠 값을 수정
+
+        // Step1. change 함수를 정의
+        const change = ()=>{
+            console.log('function')
+            // Step3. id가 txt인 요소의 스타일을 변경
+            // .style
+            let txt = document.getElementById('txt')
+            
+            // a. 스티일 객체를 출력 => 요소가 가진 모든 css 속성 등장
+            console.log(txt.style)
+
+            // b. 원하는 속성에 접근하는 방법 => .style.key(원하는 속성)
+            console.log('스타일 : ', txt.style.color)
+            
+            // c. 원하는 속성 수정 방법
+            txt.style.color = 'blue'
+
+            // ★ 주의사항 모든 속성 값은 카멜 케이스로 작성한다.
+            txt.style.backgroundColor = 'yellow'
+        }
+
+        // Step2. button 이벤트 부여
+        document.querySelector('#btn').addEventListener('click', change)
+        </script>
+
+
+</body>
+</html>

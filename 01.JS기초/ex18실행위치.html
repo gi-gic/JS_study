@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 3. 외부방식
+        - js파일을 불러와서 동작하는 방식
+        - 장점 : 코드의 재사용성 높음, 보안에 좋다
+
+        - 외부파일 작성한  후 script src를 통해 연결
+    -->
+    
+    <script src="./ex18외부.js">
+    </script>
+</head>
+<body>
+
+    <script>
+        // 1. 내부방식
+        // -html 코드 내에 script태그를 이용해서 직접 작성하는 방식
+        // -장점: 빠르게 타이핑이 가능, 전체코드를 한눈에 볼 수 있다
+        // -단점: 코드가 노출된다, 코드의 재사용성이 낮다
+        txt()
+    </script>
+    
+    
+    <!-- 2. 인라인 방식
+        - 태그 안에 직접 명시하는 방법
+        - 장점 : 단순로직처리에 용이
+        - 단점 : 코드가 노출된다, 재사용성이 아주아주 낮다. 
+    -->
+    <button onclick="alert('click!')">버튼클릭</button>
+
+
+</body>
+</html>

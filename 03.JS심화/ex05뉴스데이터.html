@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <button id='btn'>오늘의 한국 뉴스</button>
+    <div id="container"></div>
+    <script>
+
+        const getData = () => {
+            // key = fa8d9d2a4b2a41b6805c902f4a3d8929
+            let url = 'https://newsapi.org/v2/top-headlines?country=kr&apiKey=fa8d9d2a4b2a41b6805c902f4a3d8929'
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    let newsList = data.articles
+                    let code = ''
+                    console.log(newsList)
+
+                    for (let i = 0; i < newsList.length; i++) {
+
+                        code += '<table border="1px solid black" width="1200px">'
+                        code += `<tr><td><img width="300px" src="${newsList[i].urlToImage}"/></td></tr>`
+                        code += `<tr><td>${newsList[i].title}</td></tr>`
+                        code += `<tr><td>${newsList[i].description}</td></tr>`
+                        code += '</table>'
+                    }
+
+                    document.getElementById('container').innerHTML = code
+
+                })
+
+        }
+
+        document.getElementById('btn').addEventListener('click', getData)
+
+    </script>
+</body>
+
+</html>

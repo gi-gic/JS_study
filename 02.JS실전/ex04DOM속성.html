@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id ="input_txt">
+    <img src="https://blog.kakaocdn.net/dn/xFrpl/btq3UUaRJ1d/d7xiT6X2z1FSkvhkdvH81k/img.gif"
+    id="img1"
+    width="200px"
+    >
+    <br>
+    <button onclick="input_val()">인풋태그 값</button>
+    <button onclick="img_val()">이미지 값 불러오기</button>
+    <button onclick="img_val_change()">이미지 값 수정</button>
+
+    <script>
+        const input_val = ()=>{
+            // input 태그 내에 내가 입력한 값을 가져오는 함수
+            let inputTag = document.getElementById('input_txt')
+            console.log(inputTag.innerText) // innerText로는 값을 못가지고 온다
+                                            // 왜? input은 컨텐츠가 없다
+            console.log(inputTag.value)
+            // 사용자가 input태그 안에 입력한 극자를 가져오려면
+            // document.getElementById('input_txt').value를 사용해야한다.
+        }
+
+        const img_val = ()=>{
+            // 현재 img1의 속성 값을 출력하는 수
+            // src 뿐만 아니라 모든 속성들을 전부 가져올 수 있다.
+
+            let imgTag = document.getElementById('img1')
+            // Case 1 : getAttribute('속성이름')
+            console.log('Case 1 : ', imgTag.getAttribute('src'))
+
+            // Case 2 :속성이름
+            console.log('Case 2 : ', imgTag.src)
+        }
+        const img_val_change = ()=>{
+            // img 태그의 속성값을 변경
+            let imgTag = document.getElementById('img1')
+            
+            // Case 1 : setAttribute('속성이름','바꿀 값')
+            // imgTag.setAttribute('src','https://blog.kakaocdn.net/dn/repwF/btq3UsyTNnA/qd4Oc6MSPl4sLHYuLCCbK1/img.gif')
+
+            // Case 2 : 속성이름 = '바꿀 값'
+            imgTag.src = 'https://blog.kakaocdn.net/dn/repwF/btq3UsyTNnA/qd4Oc6MSPl4sLHYuLCCbK1/img.gif'
+            // 
+        }
+    </script>
+</body>
+</html>

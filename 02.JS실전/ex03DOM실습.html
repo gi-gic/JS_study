@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        👍<span id="number">0</span>
+     </p>
+     <button id="like">좋아요</button>
+     <button id="hate">싫어요</button>
+
+     <script>
+
+        // 좋아요 버튼 만들기 실습
+
+        // 좋아요 버튼 눌렀을 때 숫자 값을 증가 시키고,
+        // 싫어요 버튼 눌렀을 때 숫자 값을 1씩 감소 시킨다.
+        // 단, e 밑으로는 내려가지 않도록 할 것
+
+        // Step1
+        // like, hate 인 함수를 각각 생성
+        // like -> like 버튼 클릭 시 증가 값을 증가시키는 함수
+
+        let number = document.getElementById('number').innerText;
+        
+        console.log(number)
+        let like = () => {
+            number = parseInt(number) + 1
+            console.log(number)
+            return number
+        }
+        // hate -> hate 버튼 클릭 시 증가 값을 감소시키는 함수 
+        let hate = () => {
+            number = parseInt(number) - 1
+            if (number < 0){
+                number = 0
+            }
+            console.log(number)
+        }
+        
+        // Step2
+        // 좋아요 버튼 클릭 -> like 함수 실행
+        let likeBut = document.getElementById('like');
+        likeBut.addEventListener('click',()=>{
+            like()
+            document.getElementById('number').innerText = number
+        })
+
+        let hateBut = document.getElementById('hate')
+        hateBut.addEventListener('click', ()=>{
+            hate()
+            document.getElementById('number').innerText = number
+        })
+
+        // 싫어요 버튼 클릭 -> hate 함수 실행
+
+     </script>
+</body>
+</html>

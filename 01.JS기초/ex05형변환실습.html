@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // step 1. 사용자에게 백의자리 값을 하나 입력받는다 
+        //          (백의 자리 수를 입력해주세요!)
+        
+        // Step 2. 사용자에게 입력받은 값을 num이라는 변수에 저장 
+        let num = prompt('백의 자리 수를 입력해주세요')
+        // console.log('받아온 숫자 : ', num)
+        
+        // Step 3. num이라는 변수의 십의자리, 일의자리를 버린 결과를
+        //          console창에 출력 
+        //         (ex. 사용자 456 => 400, 511 => 500)
+        //          결과 - "당신이 입력한 숫자에서
+        //              백의 자리 이하 버린결과는 300입니다.
+
+        // Hint / 나누기 연산자
+        
+        let res = parseInt(num/100)*100
+        console.log('당신이 입력한 숫자에서 백의 자리 이하 버린 결과는',res,'입니다')
+    </script>
+</body>
+</html>

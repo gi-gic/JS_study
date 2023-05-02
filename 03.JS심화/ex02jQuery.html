@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <img id="pic" width="200px" src="https://i.ytimg.com/vi/GaUClstMb4I/maxresdefault.jpg" />
+    <p id="abc">여러분 안녕하세요~ </p>
+    <input type="text" id="inputTxt" />
+    <button id="btn">내용 변경!</button>
+    <br>
+    <button id="style-btn">스타일 변경</button>
+    <button id="pic-btn">사진 변경</button>
+
+    <!-- jQuery 가져오기 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+        // jQuery 문법의 기호 : $
+        // 1. 내가 원하는 HTML 요소를 JS에서 활용할 수 있도록 요소 가져오기 
+        // v-JS : document.getElementBy~ 
+        // jQuery : $('선택자')
+        let element = $('#abc')
+        console.log('요소 : ', element)
+
+        // 2. 내가 원하는 요소 안의 내용만 가져오기 
+        // v-JS : .innerText 
+        // jQuery : .text()
+        console.log('텍스트만 : ', element.text())
+        
+        // 3. 내가 원하는 요소 안의 내용을 태그까지 포함해서 가져오기 
+        // v- JS : .innerHTML
+        // jQuery : .html()
+        console.log('html : ', element.html())
+        
+        // 4. 요소의 내용 수정하기 
+        // v-JS : .innerText = '바꿀 값'
+        // jQuery : .text('바꿀 값')
+        element.text('<h2>임의로 바꾼 내용 입니다.</h2>')
+
+        // v-JS : .innerHTML = '바꿀 값'
+        // jQuery : .html('바꿀 값')
+        element.html('<h2>임의로 바꾼 내용 입니다.</h2>')
+
+        // 5. 버튼을 눌렀을 때, input 값을 내용 변경 
+        // 5-1) 버튼이벤트 
+        // v-JS : .addEventListener('click',()=>{})
+        // jQuery : .click(()=>{})
+        $('#btn').click(()=>{
+            console.log('btn Event')
+            // 5-2) input 값 가져오기
+            // v-JS : .value 
+            // jQuery : .val()
+            let val = $("#inputTxt").val()
+            console.log('input : ',val)
+
+            // 내가 가져온 값으로 텍스트 설정
+            element.html(val)
+
+            // input value값 초기화
+            $('inputTxt').val('')
+        })
+
+        // 6. 이미지 속성 변경 
+        // v-JS : .src, .setAttribute
+        // jQuery : .attr() 
+        $('#pic-btn').click(()=>{
+            $('#pic').attr('src', 'https://image-notepet.akamaized.net/resize/620x-/seimage/20200320%2F7f4bc91b2a154ec7efa8b86064522650.jpg')
+        })
+
+
+        // 7. 스타일 변경 
+        // v-JS : .style
+        // jQuery : .css()
+        $('#style-btn').click(()=>{
+            element.css('color', 'hotpink')
+        })
+
+    </script>
+</body>
+</html>

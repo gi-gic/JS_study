@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // undefined
+        // 호이스팅
+        // 코드가 실행되면 메모리에 변수 함수 미리 저장해둔다.
+        // 변수 애들 전체적으로 확인해봄
+        console.log('위쪽에 작성한 color : ',color)
+
+        // let도 호이스팅이 일어나긴 한다
+        // 그러나, TDZ(Temporal Death Zone)에 저장해두고
+        // 선언이 나오기 전까지 접근 못하게 함
+        // console.log('위쪽에 작성한 color : ',color2)
+
+
+
+        // 변수 : 데이터를 담을 수 있는 공간
+        // (1) var 변할 수 있는
+        var color = 'black'; // 선언
+        var color = 'pink'; // 재선언
+        color = 'yellow' // 재할당 : 가능
+        console.log(color)
+
+        // ES6문법에 새로운 변수 등장
+        // let, const
+
+        // (2)let
+        let color2 = 'black' //선언
+        // let color2 = 'pink' //재선언 불가능
+        color2 = 'yellow'; // 할당
+        console.log(color2)
+        
+        // (3) const
+        // 누군가가 재선언하거나, 재할당 안되는 값
+        // 변하면 안되는 값
+        // 게임 회사의 만렙
+        const color3 = 'pink'; //선언
+        // const color3 = 'black'; 재선언 불가능
+        // color3 = 'yellow' 재할당 불가능
+        console.log(color3)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체
+        let person = {
+            name : '장원영',
+            birthyear : '2004',
+            gender  : 'woman',
+            group : 'ive'
+        }
+
+        // 객체 출력
+        console.log(person)
+
+        // 객체 내 데이터에 접근하는 방법
+        // Case1) 객체이름.key이름
+        console.log(person.name)
+        // Case2) 객체이름["key이름"]
+        console.log(person["name"])
+        
+        // 객체 내 데이터 변경하는 방법
+        person.name = '안유진'
+        console.log('현재 person', person)
+
+        // 배열 안에 객체를 넣을 수 있고
+        // 객체 안에 배열을 넣을 수 있다
+        let orderList = [
+            {
+                name : '아이스 아메리카노' 
+                ,place : 'takeout'
+                ,stamp : true
+            },
+            {
+                name : '핫카페라떼'
+                ,place : 'here'
+                ,stamp : false
+            }
+            
+        ]
+        
+        // 배열에 접근 -> 객체에 접근
+
+        // (인덱스 번호) (.key)
+        console.log(orderList[1].name)
+
+
+    </script>
+</body>
+</html>

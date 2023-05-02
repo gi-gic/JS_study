@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1) 랜덤한 수를 하나 뽑아준다. (게임 당 한번)
+        // 2) 사용자에게 숫자를 입력받아준다. (정답 전까진 계속 받아준다)
+        // 3) 결과를 판정 
+        //      -> 사용자 숫자 > 랜덤 숫자 '입력한 숫자보다 작은 수 입니다.'
+        //      -> 사용자 숫자 < 랜덤 숫자 '입력한 숫자보다 큰 수 입니다'
+        //      -> 사용자 숫자 = 랜덤 숫자 '정답입니다. 축하합니다! 🎉'
+        //          윈도우 + . => emoji 등장! 
+        let ran_num = parseInt(Math.random()*100)+1
+        // Math.random() = 0부터 1까지 랜덤한 수로 뽑아준다
+        console.log('랜덤 : ', ran_num)
+
+        while(true){
+            let num = prompt('숫자를 입력해주세요')
+            if(num==ran_num){
+                alert('정답입니다. 축하합니다! 🎉')
+                break
+            }else if (num>ran_num){
+                alert('입력한 숫자보다 작은 수 입니다.')
+            }else if (num<ran_num){
+                alert('입력한 숫자보다 큰 수 입니다')
+            }
+        }
+    </script>
+</body>
+</html>
